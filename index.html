@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Preston's Color Changer</title>
+  <title>Color Changer</title>
   <style>
     body {
       background-color: orange;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Ensure the body takes up the full viewport height */
+      margin: 0; /* Remove default margin to avoid spacing around the body */
       text-align: center;
       font-family: Arial, sans-serif;
     }
@@ -28,7 +34,6 @@
   <button id="colorButton">Change Color</button>
 
   <script>
-    // Function to generate a random color in hexadecimal format
     function getRandomColor() {
       const letters = "0123456789ABCDEF";
       let color = "#";
@@ -38,14 +43,13 @@
       return color;
     }
 
-    // Add a click event listener to the button
     const colorButton = document.getElementById("colorButton");
     const heading = document.getElementById("heading");
 
     colorButton.addEventListener("click", function () {
       const randomColor = getRandomColor();
       document.body.style.backgroundColor = randomColor;
-      heading.style.color = randomColor; // Change text color to match background
+      heading.style.color = randomColor;
     });
   </script>
 </body>
